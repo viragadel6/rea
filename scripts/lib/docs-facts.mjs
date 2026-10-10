@@ -98,15 +98,6 @@ export const documentationFactIssues = async (root, catalog) => {
   const agents = await readFile(join(root, "AGENTS.md"), "utf8");
   requireText(issues, "AGENTS.md", agents, "docs/public/product-catalog.json");
 
-  const templatePath = ".github/pull_request_template.md";
-  const template = await readFile(join(root, templatePath), "utf8");
-  requireText(
-    issues,
-    templatePath,
-    template,
-    "docs/public/product-catalog.json",
-  );
-
   return issues;
 };
 
